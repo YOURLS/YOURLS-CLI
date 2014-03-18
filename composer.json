@@ -1,0 +1,19 @@
+{
+    "name": "yourls/yourls-cli",
+    "description": "A Command Line Interface for YOURLS",
+    "type": "project",
+    "keywords": [ "cli", "yourls", "shorturl", "short url" ], 
+    "homepage": "http://github.com/yourls/yourls-cli",
+    "license": "MIT",
+    "bin": [
+        "bin/yourls"
+    ],
+    "require": {
+        "php": ">=5.3",
+        "rmccue/requests": "*",
+        "wp-cli/php-cli-tools": "*"
+    },
+    "config": {
+        "vendor-dir": "src/php/vendor"
+    }
+}
