@@ -38,8 +38,12 @@ if ( isset( $assoc_args['version'] ) && empty( $arguments ) ) {
 
 // Global parameter :  --require
 if ( isset( $assoc_args['require'] ) ) {
-    require $assoc_args['require'];
-    unset( $assoc_args['require'] );
+    if( file_exists( $assoc_args['require'] ) ) {
+        require $assoc_args['require'];
+        unset( $assoc_args['require'] );
+    } else {
+        YOURLS_CLI::error( sprintf( 'file "%s" not found', $assoc_args['require'] ) ) ;
+    }
 }
 
 // Global parameter :  --path

@@ -164,7 +164,7 @@ class YOURLS_CLI {
     static function warning( $message, $label = 'Warning' ) {
         if ( YOURLS_CLI_QUIET )
             return;
-        \cli\err( '%C' . $label . ': %n' . self::error_to_string( $message ) );
+        \cli\err( '%C' . $label . ': %n' . $message );
     }
 
     /**
