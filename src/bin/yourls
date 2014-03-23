@@ -1,5 +1,4 @@
-#!/usr/bin/bash
-
+#!/usr/bin/env bash
 
 # Get the absolute path of this executable
 ORIGDIR="$(pwd)"
