@@ -203,4 +203,10 @@ class YOURLS_CLI {
         return $args[$index];
     }
 
+    static function progress_bar( $message, $count ) {
+        if ( \cli\Shell::isPiped() )
+            return new \YOURLS_CLI\NoOp;
+
+        return new \cli\progress\Bar( $message, $count );
+    }
 }

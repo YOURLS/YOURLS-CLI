@@ -31,5 +31,20 @@ class Dummy_Command extends YOURLS_CLI_Command {
         YOURLS_CLI::success( sprintf( '%d is a numeric argument', $check ) );
     }
     
-    
+    /**
+     * Dummy function with a progress bar
+     *
+     * Example: yourls dummy progress
+     */
+    public function progress( $args, $assoc_args ) {
+        $progress = YOURLS_CLI::progress_bar( 'Doing something', 100 );
+        for ( $i = 0; $i < 100; $i++ ) {
+            $progress->tick();
+            usleep( 50000 );
+        }
+        $progress->finish();
+        
+        YOURLS_CLI::success( 'Something done' );
+    }
+ 
 }
